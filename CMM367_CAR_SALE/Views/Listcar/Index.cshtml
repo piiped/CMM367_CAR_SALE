@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CMM367_CAR_SALE.Models.CarModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+@foreach (var item in Model) {
+    <button>
+
+        <img src="~/images/@Url.Content(item.CarImg)" width="100px"/>
+
+            <p>
+                @Html.DisplayFor(modelItem => item.CarName)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.Price)
+            </p>
+
+    </button>
+}
+
