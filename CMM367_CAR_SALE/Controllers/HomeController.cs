@@ -17,42 +17,151 @@ namespace CMM367_CAR_SALE.Controllers
         {
             return View();
         }
-        public IActionResult Detail1()
+        public IActionResult Car01()
+        {
+            return View();
+        }
+        public IActionResult Car02()
+        {
+            return View();
+        }
+        public IActionResult Car03()
+        {
+            return View();
+        }
+        public IActionResult Car04()
+        {
+            return View();
+        }
+        public IActionResult Car05()
+        {
+            return View();
+        }
+        public IActionResult Car06()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult calculate()
+        public IActionResult car1()
         {
-
-            int price = 500000;
-            int down = 0;
-            int month = 0;
-            int finance, increase, year, totalincrease, total = 0;
+            int price = 452000;
+            int down,month,finance, increase, year, totalincrease, total = 0;
             var result = 0;
            
-                down = Convert.ToInt32(HttpContext.Request.Form["txt2"].ToString());
-                month = Convert.ToInt32(HttpContext.Request.Form["txt3"].ToString());
+                down = Convert.ToInt32(HttpContext.Request.Form["txdown"].ToString());
+                month = Convert.ToInt32(HttpContext.Request.Form["txmonth"].ToString());
                 finance = price - down;
                 increase = finance * 5 / 100;
                 year = month / 12;
                 totalincrease = increase * year;
                 total = finance + totalincrease;
                 result = total / month;
-            
+
             ViewBag.RESULT = result.ToString();
-            ViewBag.Price = price.ToString();
-            ViewBag.Down = down.ToString();
-            ViewBag.Finance = finance.ToString();
-            ViewBag.Increase = increase.ToString();
             ViewBag.Month = month.ToString();
-            ViewBag.Year = year.ToString();
-            ViewBag.Totalincrease = totalincrease.ToString();
-            ViewBag.Total = total.ToString();
 
-            return View("Detail1");
+            return View("Car01");
+        }
+        public IActionResult car2()
+        {
+            int price = 430000;
+            int down, month, finance, increase, year, totalincrease, total = 0;
+            var result = 0;
 
+            down = Convert.ToInt32(HttpContext.Request.Form["txdown"].ToString());
+            month = Convert.ToInt32(HttpContext.Request.Form["txmonth"].ToString());
+            finance = price - down;
+            increase = finance * 5 / 100;
+            year = month / 12;
+            totalincrease = increase * year;
+            total = finance + totalincrease;
+            result = total / month;
+
+            ViewBag.RESULT = result.ToString();
+            ViewBag.Month = month.ToString();
+
+            return View("Car02");
+        }
+        public IActionResult car3()
+        {
+            int price = 398000;
+            int down, month, finance, increase, year, totalincrease, total = 0;
+            var result = 0;
+
+            down = Convert.ToInt32(HttpContext.Request.Form["txdown"].ToString());
+            month = Convert.ToInt32(HttpContext.Request.Form["txmonth"].ToString());
+            finance = price - down;
+            increase = finance * 5 / 100;
+            year = month / 12;
+            totalincrease = increase * year;
+            total = finance + totalincrease;
+            result = total / month;
+
+            ViewBag.RESULT = result.ToString();
+            ViewBag.Month = month.ToString();
+
+            return View("Car03");
+        }
+        public IActionResult car4()
+        {
+            int price = 406900;
+            int down, month, finance, increase, year, totalincrease, total = 0;
+            var result = 0;
+
+            down = Convert.ToInt32(HttpContext.Request.Form["txdown"].ToString());
+            month = Convert.ToInt32(HttpContext.Request.Form["txmonth"].ToString());
+            finance = price - down;
+            increase = finance * 5 / 100;
+            year = month / 12;
+            totalincrease = increase * year;
+            total = finance + totalincrease;
+            result = total / month;
+
+            ViewBag.RESULT = result.ToString();
+            ViewBag.Month = month.ToString();
+
+            return View("Car04");
+        }
+        public IActionResult car5()
+        {
+            int price = 351000;
+            int down, month, finance, increase, year, totalincrease, total = 0;
+            var result = 0;
+
+            down = Convert.ToInt32(HttpContext.Request.Form["txdown"].ToString());
+            month = Convert.ToInt32(HttpContext.Request.Form["txmonth"].ToString());
+            finance = price - down;
+            increase = finance * 5 / 100;
+            year = month / 12;
+            totalincrease = increase * year;
+            total = finance + totalincrease;
+            result = total / month;
+
+            ViewBag.RESULT = result.ToString();
+            ViewBag.Month = month.ToString();
+
+            return View("Car05");
+        }
+        public IActionResult car6()
+        {
+            int price = 362000;
+            int down, month, finance, increase, year, totalincrease, total = 0;
+            var result = 0;
+
+            down = Convert.ToInt32(HttpContext.Request.Form["txdown"].ToString());
+            month = Convert.ToInt32(HttpContext.Request.Form["txmonth"].ToString());
+            finance = price - down;
+            increase = finance * 5 / 100;
+            year = month / 12;
+            totalincrease = increase * year;
+            total = finance + totalincrease;
+            result = total / month;
+
+            ViewBag.RESULT = result.ToString();
+            ViewBag.Month = month.ToString();
+
+            return View("Car06");
         }
 
         public IActionResult Privacy()

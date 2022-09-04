@@ -1,0 +1,205 @@
+﻿@{
+    ViewData["Title"] = "2016 Toyota Yaris";
+    ViewData["Pricecar"] = "฿351,000";
+    ViewData["id"] = "car5";
+}
+
+<style>
+
+    .carname {
+        font-size: 24px;
+    }
+
+    .carprice {
+        font-size: 32px;
+        font-weight: bold;
+        color: #A83A3A;
+    }
+
+    .loancalcu {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .cardetail {
+        font-size: 20px;
+    }
+
+    .result {
+        font-size: 26px
+    }
+
+    .carresult {
+        font-size: 26px;
+        font-weight: bold;
+        color: #A83A3A;
+    }
+
+    .desc {
+        font-size: 10px;
+        color: grey;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        background: #EBEBEB;
+        border-radius: 20px;
+        margin-top: 45px;
+        margin: 17px auto;
+    }
+
+        .card:hover {
+            cursor: pointer;
+        }
+
+    .carddetail {
+        margin-top: 45px;
+        margin: 17px auto;
+    }
+
+    .carimg {
+        display: none;
+        width: 440px;
+        border-radius: 20px;
+        margin: 26px;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 30px;
+        gap: 50px;
+    }
+
+    .sec {
+        display: flex;
+        margin: 0 17px;
+        align-items: center;
+        padding-bottom: 20px;
+        justify-content: space-between;
+    }
+
+    .btnimg {
+        background: #A83A3A;
+        color: white;
+        width: 70px;
+        height: 45px;
+        border: none;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+        .btnimg:hover {
+            background: #F4A7A7;
+            color: #A83A3A;
+            transition-delay: 100ms;
+            transition-duration: 100ms;
+            cursor: pointer;
+        }
+
+    .btncal {
+        background: #A83A3A;
+        color: white;
+        padding: 8px 70px;
+        border: none;
+        border-radius: 6px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 16px 0;
+    }
+
+        .btncal:hover {
+            background: #F4A7A7;
+            color: #A83A3A;
+            transition-delay: 100ms;
+            transition-duration: 100ms;
+            cursor: pointer;
+        }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input {
+        -webkit-appearance: none;
+        margin: 5px 10px;
+        border: 1px solid gray;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="grid">
+    <div class="card">
+        <div class="w3-content w3-display-container">
+            <img class="carimg" src="~/images/@ViewData["id"]/1.jpg" />
+            <img class="carimg" src="~/images/@ViewData["id"]/2.jpg" />
+            <img class="carimg" src="~/images/@ViewData["id"]/3.jpg" />
+            <img class="carimg" src="~/images/@ViewData["id"]/4.jpg" />
+            <div class="sec">
+                <button class="btnimg" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="btnimg" onclick="plusDivs(1)">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="carddetail">
+        <form asp-controller="Home" asp-action="@ViewData["id"]" method="post">
+
+            <p class="carname">@ViewData["Title"]</p>
+            <p class="carprice">@ViewData["Pricecar"]</p>
+
+            <span class="loancalcu">คำนวณสินเชื่อรถ</span>
+            <span class="desc">*อัตราดอกเบี้ย 5% ต่อปี</span>
+            <table>
+                <tr>
+                    <td class="cardetail">จำนวนเงินดาวน์ </td>
+                    <td class="cardetail"><input name="txdown" type="number" /></td>
+                    <td class="cardetail">บาท</td>
+                </tr>
+                <tr>
+                    <td class="cardetail">ระยะเวลาผ่อน </td>
+                    <td class="cardetail"><input name="txmonth" type="number" /></td>
+                    <td class="cardetail">เดือน</td>
+                </tr>
+            </table>
+            <button class="btncal" onclick="car5()"> คำนวณ </button>
+
+        </form>
+        <form asp-controller="Home" asp-action="@ViewData["id"]" method="get">
+            <span class="result">ค่าผ่อนชำระ </span>
+            <span class="carresult">฿@ViewBag.RESULT / เดือน</span><br />
+            <span class="result">เป็นระยะเวลา </span>
+            <span class="carresult">@ViewBag.Month เดือน</span>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("carimg");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
