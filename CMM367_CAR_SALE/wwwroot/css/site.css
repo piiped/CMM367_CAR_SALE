@@ -1,9 +1,23 @@
 html {
-  font-size: 14px;
+  font-size: 20px;
 }
 
+.navbar {
+    background: #a83a3a;
+    text-align:center;
+}
+
+.navbar-brand {
+    text-align: center;
+
+}
+.navbar-flex {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 @media (min-width: 768px) {
-  html {
+    html {
     font-size: 16px;
   }
 }

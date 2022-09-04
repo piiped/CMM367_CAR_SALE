@@ -1,8 +1,159 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .card{
+        width:320px;
+        background: #EBEBEB;
+        border-radius:10px;
+    }
+    .card:hover{
+        box-shadow: 10px 10px 20px #676666;
+            transition-delay: 100ms;
+            transition-duration: 200ms;
+            cursor:pointer;
+    }
+    .card-image
+    {
+        background: #A83A3A;
+        margin: 17px auto;
+        border-radius: 10px;
+        width:285px;
+        height:auto;
+    }
+    .image{
+        border-radius: 10px;
+    }
+    .sec{
+        display:flex;
+        margin: 0 17px;
+        align-items: center;
+        padding-bottom: 20px;
+        justify-content: space-between;
+    }
+    .describe {
+        flex-basis: 50%;
+    }
+    .describe p {
+       margin:0;
+    }
+    .describe .active {
+        color: #A83A3A;
+            font-weight: 700;
+    }
+    .describe2{
+        background: #F4A7A7;
+        color: #A83A3A;
+        width:71px;
+        height:45px;
+        border-radius: 50px;
+        font-size: 20px;
+        text-align: center;
+        margin-right:0;
+    }
+    .describe2:hover {
+        background: #A83A3A;
+        color: #F4A7A7;
+            transition-delay: 100ms;
+            transition-duration: 100ms;
+            cursor: pointer;
+    }
+    .grid{
+       display:flex;
+       flex-direction:row;
+        flex-wrap: wrap;
+        justify-content:center;
+       align-items:center;
+       margin-bottom:30px;
+        gap: 50px;
+    }
+</style>
+<p style="text-align:center">scroll and hover</p>
+<div class="grid">
+    <div class="card">
+        <div class="card-image">
+            <img class="image" src="~/images/car1/1.jpg" style="width:100%" />
+        </div>
+        <div class="sec">
+            <div class="describe">
+                <p>2020 Toyota Yaris</p>
+                <p class="active">฿452,000</p>
+            </div>
+            <a class="navbar-brand describe2" asp-area="" asp-controller="Home" asp-action="Index">
+               &#8594;
+            </a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-image">
+            <img class="image" src="~/images/car2/1.jpg" style="width:100%" />
+        </div>
+        <div class="sec">
+            <div class="describe">
+                <p>2019 Toyota Yaris</p>
+                <p class="active">฿430,000</p>
+            </div>
+            <a class="navbar-brand describe2" asp-area="" asp-controller="Home" asp-action="Index">
+                &#8594;
+            </a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img class="image" src="~/images/car3/1.jpg" style="width:100%" />
+        </div>
+        <div class="sec">
+            <div class="describe">
+                <p>2018 Toyota Yaris</p>
+                <p class="active">฿398,000</p>
+            </div>
+            <a class="navbar-brand describe2" asp-area="" asp-controller="Home" asp-action="Index">
+                &#8594;
+            </a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img class="image" src="~/images/car4/1.jpg" style="width:100%" />
+        </div>
+        <div class="sec">
+            <div class="describe">
+                <p>2017 Toyota Yaris</p>
+                <p class="active">฿406,900</p>
+            </div>
+            <a class="navbar-brand describe2" asp-area="" asp-controller="Home" asp-action="Index">
+                &#8594;
+            </a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img class="image" src="~/images/car5/1.jpg" style="width:100%" />
+        </div>
+        <div class="sec">
+            <div class="describe">
+                <p>2016 Toyota Yaris</p>
+                <p class="active">฿351,000</p>
+            </div>
+            <a class="navbar-brand describe2" asp-area="" asp-controller="Home" asp-action="Index">
+                &#8594;
+            </a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-image">
+            <img class="image" src="~/images/car6/1.jpg" style="width:100%" />
+        </div>
+        <div class="sec">
+            <div class="describe">
+                <p>2015 Toyota Yaris</p>
+                <p class="active">฿362,000</p>
+            </div>
+            <a class="navbar-brand describe2" asp-area="" asp-controller="Home" asp-action="Index">
+               &#8594;
+            </a>
+        </div>
+    </div>
 </div>
