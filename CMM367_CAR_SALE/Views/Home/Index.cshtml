@@ -1,43 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    int price=20;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Detail1">detail1</a>
 
-<form asp-controller="Home" asp-action="calculate" method="post">
-    
-    <table>
-        <tr>
-            <td><label>ราคารถ</label></td>
-            <td>เงินดาวน์</td>
-            <td><label>จำนวนเดือน</label></td>
 
-        </tr>
-        <tr>
-            <td><input name="txt1" /> </td>
-            <td><input name="txt2" /></td>
-            <td><input name="txt3" /></td>
-            <td>&nbsp;<button onclick="calculate()"> Calculate </button></td>
-            <td>&nbsp;<input type="submit" value="calculate" /> </td>
-        </tr>
-    </table>
 
-    <label>Result : </label>
-
-</form>
-<form asp-controller="Home" asp-action="calculate" method="get">
-    <label>@ViewBag.RESULT
-        @ViewBag.Price 
-        @ViewBag.Down
-        @ViewBag.Finance
-        @ViewBag.Increase
-        @ViewBag.Month
-        @ViewBag.Year
-        @ViewBag.Totalincrease
-        @ViewBag.Total
-    </label>
-</form>
