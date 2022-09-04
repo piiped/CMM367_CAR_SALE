@@ -17,31 +17,30 @@ namespace CMM367_CAR_SALE.Controllers
         {
             return View();
         }
+        public IActionResult Detail1()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult calculate()
         {
 
-            int price = 0;
+            int price = 500000;
             int down = 0;
-            int finance = 0;
-            int increase = finance * (5 /100);
             int month = 0;
-            int year = 0;
-            int totalincrease = 0;
-            int total = 0;
+            int finance, increase, year, totalincrease, total = 0;
             var result = 0;
-
+           
+                down = Convert.ToInt32(HttpContext.Request.Form["txt2"].ToString());
+                month = Convert.ToInt32(HttpContext.Request.Form["txt3"].ToString());
+                finance = price - down;
+                increase = finance * 5 / 100;
+                year = month / 12;
+                totalincrease = increase * year;
+                total = finance + totalincrease;
+                result = total / month;
             
-            price = Convert.ToInt32(HttpContext.Request.Form["txt1"].ToString());
-            down = Convert.ToInt32(HttpContext.Request.Form["txt2"].ToString());
-            finance = price - down;
-            increase = finance * 5 / 100;
-            month = Convert.ToInt32(HttpContext.Request.Form["txt3"].ToString());
-            year = month / 12;
-            totalincrease = increase * year;
-            total = finance + totalincrease;
-            result = total / month;
-
             ViewBag.RESULT = result.ToString();
             ViewBag.Price = price.ToString();
             ViewBag.Down = down.ToString();
@@ -51,7 +50,8 @@ namespace CMM367_CAR_SALE.Controllers
             ViewBag.Year = year.ToString();
             ViewBag.Totalincrease = totalincrease.ToString();
             ViewBag.Total = total.ToString();
-            return View("Index");
+
+            return View("Detail1");
 
         }
 
