@@ -17,7 +17,10 @@ namespace CMM367_CAR_SALE.Controllers
         {
             return View();
         }
-
+        public IActionResult Cargo()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
